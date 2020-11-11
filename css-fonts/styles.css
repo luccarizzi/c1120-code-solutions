@@ -1,0 +1,15 @@
+h1 {
+  font-family: 'Oswald', sans-serif;
+}
+
+h2, p {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+h2 {
+  font-style: italic;
+}
+
+p {
+  line-height: 1.6em;
+}
