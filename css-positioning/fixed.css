@@ -7,4 +7,6 @@ html {
   text-align: center;
 
   /* your code here */
+  position: fixed;
+  width: 100%;
 }
