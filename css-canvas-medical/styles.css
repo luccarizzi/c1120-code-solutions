@@ -1,5 +1,21 @@
 /* box */
 
+.box-padding {
+  padding: 5rem 0;
+}
+
+.box-padding-2 {
+  padding: 1.2rem 0;
+}
+
+.box-padding-3 {
+  padding: 8rem 0;
+}
+
+.box-padding-4 {
+  padding: 3rem 0;
+}
+
 .box-header {
   height: 5rem;
 }
@@ -34,24 +50,32 @@
   position: relative;
 }
 
-.box-text-inner {
+.box-text-hero-inner {
   position: absolute;
   top: 8rem;
   left: 5.1rem;
 }
 
-.box-text-inner p {
+.box-text-hero-inner p {
   position: relative;
   top: -1rem;
 }
 
 /* font */
 
-.font-white {
+.uppercase {
+  text-transform: uppercase;
+}
+
+.font-white, .font-white p {
   color: #FFFFFF;
 }
 
-.font-avenir {
+.font-gray, .font-gray p {
+  color: #6E6E6E;
+}
+
+.font-avenir, .font-avenir p {
   font-family: 'Avenir';
   font-style: normal;
   font-weight: 500;
@@ -73,8 +97,25 @@
   font-size: 1.1rem;
 }
 
-.font-size-head {
+.font-size-title {
   font-size: 2.7rem;
+}
+
+.font-size-subtitle {
+  font-size: 2.1rem;
+}
+
+.font-size-subtitle p {
+  font-size: 1.4rem;
+}
+
+.font-size-subtitle-2 p {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.font-size-text-2 {
+  font-size: 1.1rem;
 }
 
 .font-size-text {
@@ -95,7 +136,15 @@
   background-color: #FAFAFA;
 }
 
+.bg-dark-gray {
+  background-color: #525351;
+}
+
 /* positioning */
+
+.remove-margin-tb {
+  margin: -0.5rem 0;
+}
 
 .center-element {
   margin: 0 auto;
@@ -117,6 +166,30 @@
   text-align: center;
 }
 
+.margin-tb p {
+  margin: 2.1rem;
+}
+
+.margin-t {
+  margin-top: 2.6rem;
+}
+
+.margin-t-2 {
+  margin-top: 2.8rem;
+}
+
+.margin-r {
+  margin-right: 3rem;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
 /* extra */
 
 .image-logo {
@@ -129,7 +202,6 @@
 
 .image-hero {
   width: 100%;
-  padding: 5rem 0;
   object-fit: cover;
   height: 770px;
   filter: contrast(65%);
