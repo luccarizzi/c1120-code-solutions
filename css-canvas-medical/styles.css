@@ -90,6 +90,12 @@
   left: 5.1rem;
 }
 
+.box-text-hero-inner-impl {
+  position: absolute;
+  top: 12rem;
+  left: 5.1rem;
+}
+
 .box-text-hero-inner p {
   position: relative;
   top: -1rem;
@@ -109,11 +115,16 @@
   color: #6E6E6E;
 }
 
+.font-light-gray, .font-light-gray a {
+  color: #9E9E9E;
+}
+
 .font-dark-gray {
   color: #44494B;
 }
 
-.font-avenir, .font-avenir p {
+.font-avenir,
+.font-avenir p {
   font-family: 'Avenir';
   font-style: normal;
   font-weight: 500;
@@ -132,7 +143,6 @@
 }
 
 .font-nav-bar a {
-  color: #9E9E9E;
   text-decoration: none;
   font-size: 1.1rem;
 }
@@ -145,8 +155,16 @@
   font-size: 2.7rem;
 }
 
+.font-size-title-2 {
+  font-size: 2.4rem;
+}
+
 .font-size-subtitle {
   font-size: 2.1rem;
+}
+
+.font-size-subtitle-2 {
+  font-size: 1.4rem;
 }
 
 .font-size-subtitle p {
@@ -213,6 +231,10 @@
 
 .align-baseline {
   align-items: baseline;
+}
+
+.justify-self-center {
+  justify-self: center;
 }
 
 .justify-center {
