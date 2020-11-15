@@ -20,6 +20,20 @@
   padding: 6.5rem 0;
 }
 
+.box-padding-6 {
+  padding: 2.5rem 0;
+}
+
+.box-padding-bottom-1 {
+  padding-bottom: 8rem;
+}
+
+.margin-tb-1 {
+  margin-top: 2rem;
+  margin-bottom: -0.4rem;
+  width: 700px;
+}
+
 .remove-margin-tb {
   margin: -0.5rem 0;
 }
@@ -120,7 +134,7 @@
 }
 
 .font-dark-gray {
-  color: #44494B;
+  color: #50514F;
 }
 
 .font-avenir,
@@ -201,6 +215,11 @@
   line-height: 2.8rem;
 }
 
+.font-number {
+  font-size: 2.4rem;
+  padding-right: 0.6rem;
+}
+
 /* bg color */
 
 .bg-white {
@@ -251,6 +270,10 @@
 
 .justify-start {
   justify-content: flex-start;
+}
+
+.flex-column {
+  flex-direction: column;
 }
 
 .float-right {
