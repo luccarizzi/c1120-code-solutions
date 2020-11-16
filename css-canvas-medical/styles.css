@@ -24,6 +24,11 @@
   padding: 2.5rem 0;
 }
 
+.box-padding-7 {
+  padding-top: 3rem;
+  padding-bottom: 3.5rem;
+}
+
 .box-padding-bottom-1 {
   padding-bottom: 8rem;
 }
@@ -53,6 +58,10 @@
 
 .margin-b-1 {
   margin-bottom: 5rem;
+}
+
+.margin-b-2 {
+  margin-bottom: 0.5rem;
 }
 
 .remove-margin-tb {
