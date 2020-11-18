@@ -1,0 +1,20 @@
+
+img {
+  width: 100%;
+}
+
+.image-icon {
+  width: 25%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-barlow {
+  font-family: "Barlow";
+}
+
+h2 {
+  font-size: 1.8rem;
+}
