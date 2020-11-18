@@ -124,6 +124,10 @@
   border-radius: 5px;
 }
 
+.box-button:hover {
+  cursor: pointer;
+}
+
 .box-get-started {
   width: 14rem;
   height: 4rem;
