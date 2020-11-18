@@ -56,6 +56,10 @@
   margin: 2.2rem 0;
 }
 
+.margin-tb-4 {
+  margin: 2rem 0;
+}
+
 .margin-b-1 {
   margin-bottom: 5rem;
 }
@@ -90,6 +94,10 @@
 
 .margin-r {
   margin-right: 3rem;
+}
+
+.margin-h2 {
+  margin: 0.5rem 0;
 }
 
 .box-header {
@@ -248,6 +256,10 @@
   font-size: 1.3rem;
 }
 
+.font-size-subtitle-4 {
+  font-size: 2.1rem;
+}
+
 .font-size-subtitle-2 p {
   font-size: 1.3rem;
   font-weight: 600;
@@ -404,11 +416,11 @@
 }
 
 .image-card-1 {
-  width: 60%;
+  width: 95%;
   object-fit: cover;
-  height: 300px;
+  height: 320px;
 }
 
 .box-width {
-  width: 60%;
+  width: 80%;
 }
