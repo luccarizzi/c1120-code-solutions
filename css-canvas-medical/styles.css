@@ -205,6 +205,12 @@
   font-size: 1.1rem;
 }
 
+.font-nav-bar-2 p,
+.font-nav-bar-2 a {
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
 .font-size-button-contact {
   font-size: 1.1rem;
 }
@@ -233,8 +239,13 @@
   font-size: 1.4rem;
 }
 
+.font-size-subtitle,
 .font-size-subtitle p {
   font-size: 1.4rem;
+}
+
+.font-size-subtitle-3 {
+  font-size: 1.3rem;
 }
 
 .font-size-subtitle-2 p {
@@ -244,6 +255,10 @@
 
 .font-size-text, .font-size-text p {
   font-size: 1.15rem;
+}
+
+.font-size-text-4 {
+  font-size: 1.2rem;
 }
 
 .font-size-text-2 {
@@ -368,4 +383,32 @@
 
 .bottom-line {
   border-bottom: 1px solid #E4E4E4;
+}
+
+.display-block a {
+  display: block;
+}
+
+.subscribe {
+  width: 30rem;
+  border: none;
+  border-bottom: 1px solid #6E6E6E;
+  height: 4rem;
+}
+
+.subscribe::placeholder {
+  color: #DADADA;
+  font-size: 1.8rem;
+  font-family: "Avenir";
+  text-align: center;
+}
+
+.image-card-1 {
+  width: 60%;
+  object-fit: cover;
+  height: 300px;
+}
+
+.box-width {
+  width: 60%;
 }
