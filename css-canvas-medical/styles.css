@@ -60,6 +60,10 @@
   margin: 2rem 0;
 }
 
+.margin-tb-5 {
+  margin: 3rem 0;
+}
+
 .margin-b-1 {
   margin-bottom: 5rem;
 }
@@ -131,6 +135,12 @@
 .box-get-started {
   width: 14rem;
   height: 4rem;
+  font-size: 1.4rem;
+}
+
+.box-submit {
+  width: 7rem;
+  height: 3.2rem;
   font-size: 1.4rem;
 }
 
@@ -286,6 +296,10 @@
   line-height: 1.5rem;
 }
 
+.font-size-text-5 {
+  font-size: 1.5rem;
+}
+
 .line-height-text {
   line-height: 2rem;
 }
@@ -296,6 +310,10 @@
 
 .line-height-text-3 {
   line-height: 2.8rem;
+}
+
+.line-height-text-4 {
+  line-height: 2.4rem;
 }
 
 .font-number {
@@ -427,4 +445,41 @@
 
 .box-width {
   width: 80%;
+}
+
+.form-block input,
+.form-block textarea {
+  display: block;
+  margin: 0 auto;
+}
+
+.form-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #A4A4A4;
+  height: 2rem;
+  text-align: center;
+  font-size: 1.6rem;
+  padding: 2rem;
+}
+
+.form-input::placeholder {
+  font-family: "Avenir";
+  color: #DADADA;
+}
+
+.form-block input,
+.form-block textarea {
+  margin-top: 3rem;
+}
+
+textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #A4A4A4;
+  height: 8rem;
+  text-align: center;
+  font-family: "Avenir";
+  color: #DADADA;
+  font-size: 1.6rem;
 }
