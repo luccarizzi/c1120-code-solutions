@@ -1,0 +1,41 @@
+img {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-dm-sans {
+  font-family: "DM Sans";
+}
+
+.column-end {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.font-size-tag {
+  color: #D7D7D7;
+}
+
+.font-retail-tag {
+  color: #D7D7D7;
+  text-decoration-line: line-through;
+}
+
+.font-price-tag {
+  background-color: #FFF2E7;
+  border-radius: 0.4rem;
+}
+
+.image-zoom {
+  background-image: url("images/lv-bag.jpg");
+  background-size: cover ;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
