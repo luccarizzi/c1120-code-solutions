@@ -1,0 +1,28 @@
+.container {
+  width: 100%;
+}
+
+.container-inner {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+.col-1 {
+  width: 100%;
+}
+
+.col-2 {
+  width: 50%;
+}
+
+.col-3 {
+  width: calc(100% /3);
+}
+
+.col-4 {
+  width: 25%;
+}
