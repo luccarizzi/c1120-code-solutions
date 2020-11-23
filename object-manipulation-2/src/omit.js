@@ -1,10 +1,16 @@
 /* exported omit */
 
 function omit(source, keys) {
-  // debugger;
-  var omittedObject = [];
+  debugger;
+  var omittedObject = {};
   for (var property in source) {
-    for (var i = 0; i < keys.length; )
+    for (var i = 0; i < keys.length; i++) {
+      if (property === keys[i]) {
+
+      } else {
+        omittedObject[property] = source[property];
+      }
+    }
   }
   return omittedObject;
 }
