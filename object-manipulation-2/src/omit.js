@@ -1,22 +1,17 @@
 /* exported omit */
 
 function omit(source, keys) {
-  debugger;
+  // debugger;
   var omittedObject = {};
   for (var property in source) {
+    omittedObject[property] = source[property];
     for (var i = 0; i < keys.length; i++) {
-      if (property === keys[i]) {
-
-      } else {
-        omittedObject[property] = source[property];
+      for (var prop in omittedObject) {
+        if (keys[i] === prop) {
+          delete omittedObject[prop];
+        }
       }
     }
   }
   return omittedObject;
 }
-
-omit({ foo: 1, bar: 2, baz: 3 }, ['foo', 'baz']);
-
-omit({ qux: 4, corge: 5 }, ['bar', 'grault'])
-
-omit({}, ['foo', 'bar', 'baz'])
