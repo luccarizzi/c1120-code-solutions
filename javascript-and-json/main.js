@@ -31,6 +31,6 @@ console.log("string:", string);
 
 console.log("typeof string:", typeof(string));
 
-var jsonString = JSON.stringify(string);
+var jsonString = JSON.parse(string);
 
 console.log("typeof jsonString:", jsonString);
