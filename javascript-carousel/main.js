@@ -36,7 +36,7 @@ function carousel() {
   }
 }
 
-timer = setInterval(carousel, 500);
+timer = setInterval(carousel, 2000);
 
 function move(moveCount) {
   // console.log(count);
@@ -49,7 +49,7 @@ function move(moveCount) {
   $iList[moveCount].setAttribute("class", "fas fa-circle");
   $carouselImage.setAttribute("src", imagesSrc[moveCount]);
   count = moveCount;
-  timer = setInterval(carousel, 500);
+  timer = setInterval(carousel, 2000);
 }
 
 var $dots = document.querySelector(".dots");
