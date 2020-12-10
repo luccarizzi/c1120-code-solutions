@@ -1,7 +1,6 @@
 
 var count = 1;
-var timerImages = null;
-var timerDots = null;
+var timer = null;
 var $carouselImage = document.getElementById("carousel-image");
 var imagesSrc = [
   "images/001.png",
@@ -10,12 +9,11 @@ var imagesSrc = [
   "images/025.png",
   "images/039.png"
 ]
-
 var $iList = document.querySelectorAll("i");
 
 $iList[0].setAttribute("class", "fas fa-circle");
 
-function carouselImages () {
+function carousel() {
   if (count === 0) {
     $carouselImage.setAttribute("src", imagesSrc[count]);
     console.log(count);
@@ -38,9 +36,19 @@ function carouselImages () {
   }
 }
 
-timerImages = setInterval(carouselImages, 3000);
+timer = setInterval(carousel, 1000);
 
-// <i class="fas fa-circle"></i> closed
-// <i class="far fa-circle"></i> opened
-
-// $iList[count].setAttribute("class", "fas fa-circle")
+function move(moveCount) {
+  clearInterval(timer);
+  console.log("count is on:", count);
+  if (count === 0) {
+    console.log("count is on 0.")
+    $iList[4].setAttribute("class", "far fa-circle");
+  } else {
+    $iList[count - 1].setAttribute("class", "far fa-circle");
+  }
+  $iList[moveCount].setAttribute("class", "fas fa-circle");
+  $carouselImage.setAttribute("src", imagesSrc[moveCount]);
+  count = moveCount;
+  timer = setInterval(carousel, 1000);
+}
