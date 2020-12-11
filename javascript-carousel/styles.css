@@ -22,7 +22,7 @@
 }
 
 .dots {
-  width: 140px;
+  width: 200px;
   justify-content: space-between;
 }
 
@@ -33,6 +33,7 @@ img {
 div {
   width: 100%;
 }
+
 a {
   text-decoration: none;
   color: #000000;
@@ -41,4 +42,8 @@ a {
 span {
   font-size: 3rem;
   padding: 0 2rem;
+}
+
+i {
+  font-size: 1.5rem;
 }

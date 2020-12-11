@@ -1,5 +1,5 @@
 
-var count = 1;
+var counter = 1;
 var timer = null;
 var $carouselImage = document.getElementById("carousel-image");
 var imagesSrc = [
@@ -11,52 +11,61 @@ var imagesSrc = [
 ]
 var $iList = document.querySelectorAll("i");
 
-$iList[0].setAttribute("class", "fas fa-circle");
+var fullDot = "fas fa-circle";
+var emptyDot = "far fa-circle";
+
+$iList[0].className = fullDot;
+
+timer = setInterval(carousel, 3000);
 
 function carousel() {
-  if (count === 0) {
-    $carouselImage.setAttribute("src", imagesSrc[count]);
-    // console.log(count);
-    $iList[0].setAttribute("class", "fas fa-circle");
-    $iList[4].setAttribute("class", "far fa-circle");
-    count++;
-  } else if (count < 4) {
-    $carouselImage.setAttribute("src", imagesSrc[count]);
-    // console.log(count);
-    $iList[count].setAttribute("class", "fas fa-circle");
-    $iList[count - 1].setAttribute("class", "far fa-circle");
-    count++;
-  } else {
-    $carouselImage.setAttribute("src", imagesSrc[count]);
-    // console.log(count);
-    // console.log("Lap")
-    $iList[4].setAttribute("class", "fas fa-circle");
-    $iList[count - 1].setAttribute("class", "far fa-circle");
-    count = 0;
+  for (var i = 0; i < $iList.length; i++) {
+    $iList[i].className = emptyDot;
   }
+  if (counter > 4) {
+    counter = 0;
+  }
+  $iList[counter].className = fullDot;
+  $carouselImage.setAttribute("src", imagesSrc[counter]);
+  counter++;
 }
 
-timer = setInterval(carousel, 2000);
-
-function move(moveCount) {
-  // console.log(count);
+function move(moveCounter) {
   clearInterval(timer);
-  if (count === 0) {
-    $iList[4].setAttribute("class", "far fa-circle");
-  } else {
-    $iList[count - 1].setAttribute("class", "far fa-circle");
+  for (var i = 0; i < $iList.length; i++) {
+    $iList[i].className = emptyDot;
   }
-  $iList[moveCount].setAttribute("class", "fas fa-circle");
-  $carouselImage.setAttribute("src", imagesSrc[moveCount]);
-  count = moveCount;
-  timer = setInterval(carousel, 2000);
+  $iList[moveCounter].className = fullDot;
+  $carouselImage.setAttribute("src", imagesSrc[moveCounter]);
+  counter = moveCounter + 1;
+  timer = setInterval(carousel, 3000);
 }
 
 var $dots = document.querySelector(".dots");
 
-$dots.addEventListener("click", function(event) {
-  if (event.target.nodeName === "I") {
-    var moveCount = Number(event.target.id)
-    move(moveCount);
+$dots.addEventListener("click", function (event) {
+  move(Number(event.target.id));
+})
+
+var $left = document.getElementById("left");
+var $right = document.getElementById("right");
+
+$right.addEventListener("click", function (event) {
+  if (counter > 4) {
+    counter = 0;
+  }
+  move(counter);
+})
+
+$left.addEventListener("click", function (event) {
+  if (counter === 1) {
+    for (var i = 0; i < $iList.length; i++) {
+      $iList[i].className = emptyDot;
+    }
+    $iList[4].className = fullDot;
+    $carouselImage.setAttribute("src", imagesSrc[4]);
+    counter = 5;
+  } else {
+    move(counter - 2)
   }
 })
