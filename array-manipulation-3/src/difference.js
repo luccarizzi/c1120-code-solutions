@@ -1,13 +1,16 @@
 /* exported difference */
 
 function difference(first, second) {
-
+  var differenceArray = [];
+  for (var i = 0; i < first.length; i++) {
+    if (!second.includes(first[i]) && !differenceArray.includes(first[i])) {
+      differenceArray.push(first[i]);
+    }
+  }
+  for (var j = 0; j < second.length; j++) {
+    if (!first.includes(second[j]) && !differenceArray.includes(second[j])) {
+      differenceArray.push(second[j]);
+    }
+  }
+  return differenceArray;
 }
-
-difference([2, 1], [2, 3]);
-// -> [1, 3]
-difference(['html', 'css', 'javascript'], ['php', 'css', 'sql']);
-// -> ["html", "javascript", "php", "sql"]
-difference(
-  ['a', 'link', 'to', 'the', 'past'],['the', 'adventure', 'of', 'link'])
-// -> ["a", "to", "past", "adventure", "of"]
