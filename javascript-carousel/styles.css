@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.dots {
+  width: 200px;
+  justify-content: space-between;
+}
+
+img {
+  width: 50%;
+}
+
+div {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+span {
+  font-size: 3rem;
+  padding: 0 2rem;
+}
+
+i {
+  font-size: 1.5rem;
+}
