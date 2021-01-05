@@ -1,7 +1,25 @@
+.display-4 {
+  font-size: 3rem;
+}
+
+.h5 {
+  font-size: 1.1rem;
+}
+
+nav {
+  font-size: 0.9rem;
+}
 
 @media (min-width: 768px) {
-  .flex-end {
-    display: flex;
-    justify-content: flex-end;
+  .display-4 {
+    font-size: 3.5rem;
+  }
+
+  .h5 {
+    font-size: 1.25rem;
+  }
+
+  nav {
+    font-size: 1rem;
   }
 }
