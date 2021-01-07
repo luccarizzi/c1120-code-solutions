@@ -22,10 +22,6 @@ const grades = {
   }
 }
 
-app.listen(3000, () => {
-  console.log("Express server listenin on port 3000...")
-})
-
 let gradesArray = [];
 
 app.get('/api/grades', (req, res) => {
@@ -42,4 +38,8 @@ app.get('/api/grades', (req, res) => {
 app.delete('/api/grades/:id', (req, res) => {
   gradesArray.splice(req.params.id,1);
   res.sendStatus(204);
+})
+
+app.listen(3000, () => {
+  console.log("Express server listenin on port 3000...")
 })
