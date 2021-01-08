@@ -1,17 +1,4 @@
 {
-  "nextId": 2,
-  "notes": {
-    "0": {
-      "content": "testtest",
-      "id": 0
-    },
-    "1": {
-      "content": "testtest",
-      "id": 1
-    },
-    "2": {
-      "content": "testtest",
-      "id": 2
-    }
-  }
+  "nextId": 3,
+  "notes": {}
 }

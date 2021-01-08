@@ -31,6 +31,8 @@ function checkIntSign(req, res, next) {
   if (Math.sign(req.params.id) === -1) {
     res.status(400).json({ 'error': 'id must be a positive integer' });
     return;
+  } else if (isNaN(req.params.id)) {
+    res.status(400).json({ 'error': 'id must be a positive integer' });
   } else {
     next()
   }
@@ -39,8 +41,8 @@ function checkIntSign(req, res, next) {
 app.post('/api/notes', checkContent, (req, res) => {
   req.body['id'] = dataJson.nextId;
   notes[dataJson.nextId] = req.body;
-  const newData = JSON.stringify(dataJson, null, 2);
 
+  const newData = JSON.stringify(dataJson, null, 2);
   fs.writeFile('./data.json', newData, 'utf8', err => {
     if (err) {
       res.status(500).json({ "error": "An unexpected error occurred." });
@@ -61,7 +63,17 @@ function checkContent(req, res, next) {
 }
 
 app.delete('/api/notes/:id', checkIntSign, checkId, (req, res) => {
-  res.send(req.params.id)
+
+  delete notes[req.params.id];
+
+  const newData = JSON.stringify(dataJson, null, 2);
+  fs.writeFile('./data.json', newData, 'utf8', err => {
+    if (err) {
+      res.status(500).json({ "error": "An unexpected error occurred." });
+    } else {
+      res.status(204).json({})
+    }
+  })
 })
 
 function checkId (req, res, next) {
