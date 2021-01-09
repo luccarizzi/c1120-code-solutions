@@ -74,6 +74,7 @@ app.post('/api/notes', checkContent, (req, res) => {
 
 app.delete('/api/notes/:id', checkIntSign, checkId, (req, res) => {
   delete notes[req.params.id];
+
   const newData = JSON.stringify(dataJson, null, 2);
   fs.writeFile('./data.json', newData, 'utf8', err => {
     if (err) {
@@ -85,7 +86,6 @@ app.delete('/api/notes/:id', checkIntSign, checkId, (req, res) => {
 })
 
 app.put('/api/notes/:id', checkIntSign, checkContent, checkId, (req, res) => {
-
   req.body['id'] = parseInt(req.params.id);
   notes[req.params.id] = req.body;
 
