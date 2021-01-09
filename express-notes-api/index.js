@@ -54,13 +54,11 @@ app.get('/api/notes', (req, res) => {
 
 app.get('/api/notes/:id', checkIntSign, (req, res) => {
   const id = parseInt(req.params.id);
-  for (let note in notes) {
-    if (parseInt(note) === id) {
-      res.status(200).json(notes[id]);
-      return;
-    }
+  if (notes[id]) {
+    res.status(200).json(notes[id]);
+  } else {
+    res.status(404).json({ 'error': `cannot find note with id ${id}` });
   }
-  res.status(404).json({ 'error': `cannot find note with id ${id}`});
 })
 
 app.post('/api/notes', checkContent, (req, res) => {
