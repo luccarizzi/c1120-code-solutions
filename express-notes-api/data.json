@@ -1,17 +1,21 @@
 {
-  "nextId": 7,
+  "nextId": 10,
   "notes": {
-    "4": {
-      "content": "neeew",
-      "id": 4
+    "7": {
+      "content": "new",
+      "id": 7
     },
-    "5": {
-      "content": "caos",
-      "id": 5
+    "8": {
+      "content": "content",
+      "id": 8
     },
-    "6": {
-      "content": "whaaaat",
-      "id": 6
+    "9": {
+      "content": "is",
+      "id": 9
+    },
+    "10": {
+      "content": "good",
+      "id": 10
     }
   }
 }

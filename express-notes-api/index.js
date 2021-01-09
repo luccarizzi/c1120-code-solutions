@@ -25,12 +25,10 @@ const checkers = {
   },
   checkId: (req, res, next) => {
     const id = parseInt(req.params.id);
-    for (let note in notes) {
-      if (parseInt(note) === id) {
-        return next();
-      }
+    if (notes[id]) {
+      return next();
     }
-    return res.status(404).json({ 'error': `cannot find note with id ${id}` });
+    res.status(404).json({ 'error': `cannot find note with id ${id}` });
   }
 }
 
