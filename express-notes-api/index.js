@@ -63,9 +63,7 @@ function checkContent(req, res, next) {
 }
 
 app.delete('/api/notes/:id', checkIntSign, checkId, (req, res) => {
-
   delete notes[req.params.id];
-
   const newData = JSON.stringify(dataJson, null, 2);
   fs.writeFile('./data.json', newData, 'utf8', err => {
     if (err) {
@@ -87,7 +85,18 @@ function checkId (req, res, next) {
 }
 
 app.put('/api/notes/:id', checkIntSign, checkContent, checkId, (req, res) => {
-  res.json(req.params)
+
+  req.body['id'] = req.params.id;
+  notes[req.params.id] = req.body;
+
+  const newData = JSON.stringify(dataJson, null, 2);
+  fs.writeFile('./data.json', newData, 'utf8', err => {
+    if (err) {
+      res.status(500).json({ "error": "An unexpected error occurred." });
+    } else {
+      res.status(200).json(notes[req.params.id]);
+    }
+  })
 })
 
 app.listen(3000);
