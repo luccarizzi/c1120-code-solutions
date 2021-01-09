@@ -10,7 +10,6 @@ const checkers = {
   checkIntSign: (req, res, next) => {
     if (Math.sign(req.params.id) === -1) {
       res.status(400).json({ 'error': 'id must be a positive integer' });
-      return;
     } else if (isNaN(req.params.id)) {
       res.status(400).json({ 'error': 'id must be a positive integer' });
     } else {
@@ -18,9 +17,8 @@ const checkers = {
     }
   },
   checkContent: (req, res, next) => {
-    if (Object.keys(req.body).length === 0) {
+    if (!req.body.content) {
       res.status(400).json({ 'error': 'content is a required field' });
-      return;
     } else {
       next();
     }
