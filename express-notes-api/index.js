@@ -83,7 +83,11 @@ function checkId (req, res, next) {
       return next();
     }
   }
-  return res.status(404).json({ 'error': `cannot find note with id ${id}` });
+  return res.status(404).json({'error': `cannot find note with id ${id}`});
 }
+
+app.put('/api/notes/:id', checkIntSign, checkContent, checkId, (req, res) => {
+  res.json(req.params)
+})
 
 app.listen(3000);

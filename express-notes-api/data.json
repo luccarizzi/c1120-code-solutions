@@ -1,4 +1,9 @@
 {
   "nextId": 3,
-  "notes": {}
+  "notes": {
+    "3": {
+      "c": "test",
+      "id": 3
+    }
+  }
 }
