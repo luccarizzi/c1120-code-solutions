@@ -1,0 +1,66 @@
+.f-0 {
+  font-size: 17.5px;
+}
+
+.f-1 {
+  font-size: 14px;
+}
+
+.f-2 {
+  font-size: 49px;
+}
+
+.f-3 {
+  font-size: 17.5px;
+}
+
+.f-4 {
+  font-size: 21px;
+}
+
+.f-5 {
+  font-size: 35px;
+}
+
+.f-6 {
+  font-size: 11.2px;
+}
+
+@media (min-width: 768px) {
+  .f-0 {
+    font-size: 20px;
+  }
+
+  .f-1 {
+    font-size: 16px;
+  }
+
+  .f-2 {
+    font-size: 56px;
+  }
+
+  .f-3 {
+    font-size: 20px;
+  }
+
+  .f-4 {
+    font-size: 24px;
+  }
+
+  .f-5 {
+    font-size: 40px;
+  }
+
+  .f-6 {
+    font-size: 12.8px;
+  }
+}
+
+@media (min-width: 992px) {
+
+}
+
+.fa-bootstrap {
+  font-size: 27px;
+  color: #563D7C;
+}
