@@ -2,98 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" crossorigin="anonymous"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="bootstrap.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
   <title>Bootstrap Challenge</title>
 </head>
 <body>
-  <header class="py-3 container-fluid mx-auto row border-bottom shadow-sm">
-    <div class="col-md-4 d-flex justify-content-center justify-content-md-start">
-      <h1 class="align-self-center m-0 h7 font-weight-normal">Company name</h1>
-    </div>
-    <div class="col-md-8 d-md-flex justify-content-md-end">
-      <nav class="my-1 mx-sm-auto mx-md-2 d-flex justify-content-center align-items-center">
-        <a class="text-dark px-2" href="#">Features</a>
-        <a class="text-dark px-2" href="#">Enterprise</a>
-        <a class="text-dark px-2" href="#">Support</a>
-        <a class="text-dark px-2" href="#">Pricing</a>
-      </nav>
-      <div class="d-flex justify-content-center">
-        <a class="btn btn-outline-primary" href="#">Sign up</a>
+
+  <nav class="p-3 d-flex flex-column flex-md-row align-items-center justify-content-md-between border-bottom shadow-sm">
+    <h5 class="f-0 font-weight-normal my-0 m-md-2">
+      Company name
+    </h5>
+    <div class="d-flex">
+      <div class="mt-1">
+        <a class="f-1 text-dark mx-2" href="#">Features</a>
+        <a class="f-1 text-dark mx-2" href="#">Enterprise</a>
+        <a class="f-1 text-dark mx-2" href="#">Support</a>
+        <a class="f-1 text-dark mx-2" href="#">Pricing</a>
+        <div class="d-flex justify-content-center d-md-inline mt-1 pl-md-3">
+          <a class="f-1 btn btn-outline-primary" href="#">Sign up</a>
+        </div>
       </div>
     </div>
-  </header>
-  <main class="container-lg">
+  </nav>
 
-    <section class="row mx-auto  mt-4 mb-3 mt-md-5 mb-md-4 pt-md-3">
-      <div class="text-center header mx-auto">
-        <h1 class="display-4">Pricing</h1>
-        <p class="lead mx-auto">
-          Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with
-          default Bootstrap components and utilities with little customization.
+  <section class="container-md mt-4 mb-3 pt-md-5">
+    <div class="row justify-content-center">
+      <div class="text-center">
+        <h1 class="f-2 display-4">Pricing</h1>
+        <p class="f-3 lead">
+          Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="row">
+  <section class="container-lg border-bottom pb-2 pb-md-5">
+    <div class="row">
 
-      <div class="col-12 col-sm-6 col-md-4 pb-4">
-        <div class="border rounded text-center">
-          <h2 class="border-bottom bg-light font-weight-normal h8 py-25">Free</h2>
-          <div class="">
-            <h3 class="p-md-3 h2">$0 <small class="text-muted">/ mo</small></h3>
-            <ul class="list-inline">
-              <li>10 users included</li>
-              <li>2 GB of storage</li>
-              <li>Email support</li>
-              <li>Help center access</li>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="f-4 font-weight-normal text-center m-0">Free</h4>
+          </div>
+          <div class="card-body text-center">
+            <h2 class="f-5">$0 <small class="text-muted">/ mo</small></h2>
+            <ul class="list-inline py-2">
+              <li class="f-1 text-dark">10 users included</li>
+              <li class="f-1 text-dark">2 GB of storage</li>
+              <li class="f-1 text-dark">Email support</li>
+              <li class="f-1 text-dark">Help center access</li>
             </ul>
-            <div class="btn-block p-3">
-              <a class="btn btn-outline-primary w-100" href="#">Sign up for free</a>
+            <div>
+              <a class="f-0 d-block btn btn-outline-primary py-2" href="#">Sign up for free</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 pb-4">
-        <div class="border rounded text-center">
-          <h2 class="border-bottom bg-light font-weight-normal h8 py-25">Pro</h2>
-          <div class="">
-            <h3 class="p-md-3 h2">$15 <small class="text-muted">/ mo</small></h3>
-            <ul class="list-inline">
-              <li>20 users included</li>
-              <li>10 GB of storage</li>
-              <li>Priority email support</li>
-              <li>Help center access</li>
+      <div class="col-12 col-sm-6 col-md-4 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="f-4 font-weight-normal text-center m-0">Pro</h4>
+          </div>
+          <div class="card-body text-center">
+            <h2 class="f-5">$15 <small class="text-muted">/ mo</small></h2>
+            <ul class="list-inline py-2">
+              <li class="f-1 text-dark">20 users included</li>
+              <li class="f-1 text-dark">10 GB of storage</li>
+              <li class="f-1 text-dark">Priority email support</li>
+              <li class="f-1 text-dark">Help center access</li>
             </ul>
-            <div class="btn-block p-3">
-              <a class="btn btn-outline-primary w-100" href="#">Get started</a>
+            <div>
+              <a class="f-0 d-block btn btn-primary py-2" href="#">Get started</a>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-4 pb-4">
-        <div class="border rounded text-center">
-          <h2 class="border-bottom bg-light font-weight-normal h8 py-25">Enterprise</h2>
-          <div class="">
-            <h3 class="p-md-3 h2">$29 <small class="text-muted">/ mo</small></h3>
-            <ul class="list-inline">
-              <li>30 users included</li>
-              <li>15 GB of storage</li>
-              <li>Phone and email support</li>
-              <li>Help center access</li>
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="f-4 font-weight-normal text-center m-0">Enterprise</h4>
+          </div>
+          <div class="card-body text-center">
+            <h2 class="f-5">$29 <small class="text-muted">/ mo</small></h2>
+            <ul class="list-inline py-2">
+              <li class="f-1 text-dark">30 users included</li>
+              <li class="f-1 text-dark">15 GB of storage</li>
+              <li class="f-1 text-dark">Phone and email support</li>
+              <li class="f-1 text-dark">Help center access</li>
             </ul>
-            <div class="btn-block p-3">
-              <a class="btn btn-outline-primary w-100" href="#">Contact us</a>
+            <div>
+              <a class="f-0 d-block btn btn-primary py-2" href="#">Contact us</a>
             </div>
           </div>
         </div>
       </div>
 
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <section class="container-lg mt-3 my-md-5">
+    <div class="row">
+      <div class="col-12 col-md-3">
+        <i class="fab fa-bootstrap"></i>
+        <p class="py-1 text-muted f-6">&copy; 2017-2018</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h5 class="f-0">Features</h5>
+        <ul class="list-inline">
+          <li class="f-1 text-muted">Cool stuff</li>
+          <li class="f-1 text-muted">Random feature</li>
+          <li class="f-1 text-muted">Team feature</li>
+          <li class="f-1 text-muted">Stuff for developers</li>
+          <li class="f-1 text-muted">Another one</li>
+          <li class="f-1 text-muted">Last time</li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-3">
+        <h5 class="f-0">Resources</h5>
+        <ul class="list-inline">
+          <li class="f-1 text-muted">Resource</li>
+          <li class="f-1 text-muted">Resource name</li>
+          <li class="f-1 text-muted">Another resource</li>
+          <li class="f-1 text-muted">Final resource</li>
+        </ul>
+      </div>
+      <div class="col-12 col-md-3">
+        <h5 class="f-0">About</h5>
+        <ul class="list-inline">
+          <li class="f-1 text-muted">Team</li>
+          <li class="f-1 text-muted">Locations</li>
+          <li class="f-1 text-muted">Privacy</li>
+          <li class="f-1 text-muted">Terms</li>
+        </ul>
+      </div>
+    </div>
+  <section>
+
 </body>
 </html>
