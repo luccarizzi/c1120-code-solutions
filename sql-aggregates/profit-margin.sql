@@ -1,0 +1,7 @@
+-- with filmCost as (
+--   select    "i"."filmId",
+--             sum("f"."replacementCost") as "cost"
+--   from      "inventory" as "i"
+--   join      "films" as "f" using ("filmId")
+--   group by  "i"."filmId"
+-- )
