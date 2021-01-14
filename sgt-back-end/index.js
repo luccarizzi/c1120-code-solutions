@@ -32,11 +32,6 @@ app.get('/api/grades', (req, res) => {
     from "grades"
   `;
 
-  // const sql = `
-  //   select "dog", "cat", "fish"
-  //   from "zoo"
-  // `;
-
   db
     .query(sql)
     .then(result => {
@@ -58,11 +53,14 @@ app.post('/api/grades', (req, res) => {
 
   if (!name) {
     return res.status(400).json('name property invalid or not supplied.');
-  } else if (!course) {
+  }
+  if (!course) {
     return res.status(400).json('course property invalid or not supplied.');
-  } else if (!score) {
+  }
+  if (!score) {
     return res.status(400).json('score property invalid or not supplied.');
-  } else if (parseInt(score, 10) < 1 || parseInt(score, 10) > 100) {
+  }
+  if (parseInt(score, 10) < 1 || parseInt(score, 10) > 100) {
     return res.status(400).json('score value must be between 1 and 100.');
   }
 
@@ -73,12 +71,6 @@ app.post('/api/grades', (req, res) => {
     values ($1, $2, $3)
     returning *
   `;
-
-  // const text = `
-  //   insert into cat ("food", "nap", "play")
-  //   values ($4, $10, $99)
-  //   returning *
-  // `;
 
   db
     .query(text, values)
@@ -94,7 +86,7 @@ app.post('/api/grades', (req, res) => {
     });
 })
 
-app.put('/api/grades/:gradeId', (req, res) => {
+app.put('/api/grades/:gradeId', positiveInterger, (req, res) => {
   const gradeId = req.params.gradeId;
   const name = req.body.name;
   const course = req.body.course;
@@ -102,11 +94,14 @@ app.put('/api/grades/:gradeId', (req, res) => {
 
   if (!name) {
     return res.status(400).json('name property invalid or not supplied.');
-  } else if (!course) {
+  }
+  if (!course) {
     return res.status(400).json('course property invalid or not supplied.');
-  } else if (!score) {
+  }
+  if (!score) {
     return res.status(400).json('score property invalid or not supplied.');
-  } else if (parseInt(score, 10) < 1 || parseInt(score, 10) > 100) {
+  }
+  if (parseInt(score, 10) < 1 || parseInt(score, 10) > 100) {
     return res.status(400).json('score value must be between 1 and 100.');
   }
 
