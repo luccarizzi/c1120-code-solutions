@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.timer {
+  display: block;
+  padding: 10rem;
+  border: 5px solid #000000;
+  border-radius: 50%;
+}
+
+button {
+  height: 50px;
+  width: 50px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 3rem;
+}
+
+.fas {
+  margin: 2rem 0;
+  width: 100%;
+  text-align: center;
+}
