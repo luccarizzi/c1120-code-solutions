@@ -1,0 +1,43 @@
+.black {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.purple {
+  background-color: #351C75;
+  color: #ffffff;
+}
+
+.lavender {
+  background-color: #664EA7;
+  color: #ffffff;
+}
+
+.salmon {
+  background-color: #E06666;
+  color: #ffffff;
+}
+
+.orange {
+  background-color: #F6B26B;
+  color: #000000;
+}
+
+.yellow {
+  background-color: #FEFF00;
+  color: #000000;
+}
+
+.white {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.button {
+  margin: 4rem;
+  padding: 1rem;
+  font-size: 1.4rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  outline: none;
+}
