@@ -4,7 +4,6 @@ class Stopwatch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      control: false,
       count: 0,
       watch: ''
     };
@@ -13,8 +12,30 @@ class Stopwatch extends React.Component {
     this.reset = this.reset.bind(this);
   }
 
+  pausePlay() {
+    if (this.state.watch) {
+      this.setState({ watch: '' })
+      clearInterval(this.state.watch);
+    } else {
+      this.setState({
+        watch: setInterval(this.tick, 1000)
+      });
+    }
+  }
+
+  tick() {
+    this.state.count++;
+    this.setState({ count: this.state.count });
+  }
+
+  reset() {
+    if (!this.state.watch) {
+      this.setState({ count: 0 })
+    }
+  }
+
   render() {
-    if (this.state.control) {
+    if (this.state.watch) {
       return (
         <div className="container">
           <div>
@@ -36,29 +57,6 @@ class Stopwatch extends React.Component {
         </div>
       </div>
     )
-  }
-
-  pausePlay() {
-    if (this.state.control) {
-      this.setState({ control: false });
-      clearInterval(this.state.watch);
-    } else {
-      this.setState({
-        control: true,
-        watch: setInterval(this.tick, 1000)
-      });
-    }
-  }
-
-  tick() {
-    this.state.count++;
-    this.setState({ count: this.state.count });
-  }
-
-  reset() {
-    if (!this.state.control) {
-      this.setState({ count: 0 })
-    }
   }
 }
 
