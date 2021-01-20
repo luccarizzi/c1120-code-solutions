@@ -1,0 +1,38 @@
+
+.display {
+  margin-left: 6rem;
+  align-self: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.toggle-off {
+  position: relative;
+  left: 4rem;
+}
+
+.button-container-off {
+  align-self: center;
+  background-color: #e2e2e2;
+  width: 100px;
+  border-radius: 1rem;
+}
+
+.button-container-on {
+  align-self: center;
+  background-color: #6aa74f;
+  width: 100px;
+  border-radius: 1rem;
+}
+
+button {
+  border-radius: 1rem;
+  outline: none;
+  padding: 1rem;
+  border: 2px solid black;
+}
