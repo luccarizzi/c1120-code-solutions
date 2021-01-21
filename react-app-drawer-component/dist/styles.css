@@ -1,0 +1,43 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+h2 {
+  margin: 1.5rem  1rem;
+  font-size: 2rem;
+  color: #303030;
+}
+
+li {
+  list-style-type: none;
+  margin: 1.5rem  1rem;
+  font-size: 1.4rem;
+  color: grey;
+}
+
+ul {
+  padding: 0;
+}
+
+.menu {
+  width: 500px;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.d-flex {
+  display: flex;
+}
+
+i {
+  margin: 1rem;
+  font-size: 2rem;
+}
