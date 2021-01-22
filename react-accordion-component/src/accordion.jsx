@@ -47,8 +47,8 @@ class Accordion extends React.Component {
         p = <p>{language.description}</p>;
       }
       return (
-        <div className='header'>
-          <li onClick={this.handleClick} key={language.id} id={language.id}>
+        <div className='header' key={language.id}>
+          <li onClick={this.handleClick} id={language.id}>
             {language.name}
           </li>
           {p}
