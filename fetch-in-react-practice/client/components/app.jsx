@@ -29,7 +29,6 @@ export default class App extends React.Component {
         todos
       }))
       .catch(err => console.error(err));
-
   }
 
   addTodo(newTodo) {
@@ -41,6 +40,24 @@ export default class App extends React.Component {
     * TIP: Be sure to SERIALIZE the todo object in the body with JSON.stringify()
     * and specify the "Content-Type" header as "application/json"
     */
+
+    const todos = this.state.todos;
+
+    fetch('http://localhost:3000/api/todos', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newTodo)
+    })
+      .then(res => res.json())
+      .then(todo => {
+        todos.push(todo);
+        this.setState({
+          todos: todos
+        });
+      })
+      .catch(err => console.error(err));
   }
 
   toggleCompleted(todoId) {
