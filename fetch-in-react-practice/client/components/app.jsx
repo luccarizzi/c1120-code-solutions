@@ -40,8 +40,7 @@ export default class App extends React.Component {
     * TIP: Be sure to SERIALIZE the todo object in the body with JSON.stringify()
     * and specify the "Content-Type" header as "application/json"
     */
-
-    const todos = this.state.todos;
+    const newTodos = this.state.todos;
 
     fetch('http://localhost:3000/api/todos', {
       method: 'POST',
@@ -52,9 +51,9 @@ export default class App extends React.Component {
     })
       .then(res => res.json())
       .then(todo => {
-        todos.push(todo);
+        newTodos.push(todo);
         this.setState({
-          todos: todos
+          todos: newTodos
         });
       })
       .catch(err => console.error(err));
@@ -75,6 +74,28 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
+    const newTodos = this.state.todos;
+    const todoIndex = newTodos.findIndex(todo => todo.todoId === todoId);
+
+    const completedTodo = {
+      isCompleted: !newTodos[todoIndex].isCompleted
+    };
+    newTodos[todoIndex].isCompleted = !newTodos[todoIndex].isCompleted;
+
+    fetch(`http://localhost:3000/api/todos/${todoId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(completedTodo)
+    })
+      .then(res => res.json())
+      .then(todo => {
+        this.setState({
+          todos: newTodos
+        });
+      })
+      .catch(err => console.error(err));
   }
 
   render() {
