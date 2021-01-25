@@ -24,12 +24,6 @@ app.get('/api/grades', (req, res, next) => {
       const grades = result.rows;
       res.json(grades);
     })
-    // .catch(err => {
-    //   console.error(err);
-    //   res.status(500).json({
-    //     error: 'an unexpected error occurred'
-    //   });
-    // });
     .catch(err => next(err));
 });
 
@@ -37,17 +31,9 @@ app.post('/api/grades', (req, res, next) => {
   const { name, course } = req.body;
   const score = parseInt(req.body.score, 10);
   if (!name || !course || !score) {
-    // res.status(400).json({
-    //   error: 'name, course, and score are required fields'
-    // });
-    // return;
     throw new ClientError(400, 'name, course, and score ARE required fields');
   }
   if (!Number.isInteger(score) || score < 0 || score > 100) {
-    // res.status(400).json({
-    //   error: 'score must be an integer between 0 and 100'
-    // });
-    // return;
     throw new ClientError(400, 'score MUST be an integer between 0 and 100');
   }
   const sql = `
@@ -61,22 +47,12 @@ app.post('/api/grades', (req, res, next) => {
       const [newGrade] = result.rows;
       res.status(201).json(newGrade);
     })
-    // .catch(err => {
-    //   console.error(err);
-    //   res.status(500).json({
-    //     error: 'an unexpected error occurred'
-    //   });
-    // });
     .catch(err => next(err));
 });
 
 app.get('/api/grades/:gradeId', (req, res, next) => {
   const gradeId = parseInt(req.params.gradeId, 10);
   if (!Number.isInteger(gradeId) || gradeId < 1) {
-    // res.status(400).json({
-    //   error: 'grade must be a positive integer'
-    // });
-    // return;
     throw new ClientError(400, 'grade MUST be a positive integer');
   }
   const sql = `
@@ -89,39 +65,22 @@ app.get('/api/grades/:gradeId', (req, res, next) => {
     .then(result => {
       const [grade] = result.rows;
       if (!grade) {
-        // res.status(404).json({
-        //   error: `cannot find grade with gradeId ${gradeId}`
-        // });
         throw new ClientError(404, `cannot FIND grade with gradeId ${gradeId}`);
       } else {
         res.json(grade);
       }
     })
-    // .catch(err => {
-    //   console.error(err);
-    //   res.status(500).json({
-    //     error: 'an unexpected error occurred'
-    //   });
-    // });
     .catch(err => next(err));
 });
 
 app.put('/api/grades/:gradeId', (req, res, next) => {
   const gradeId = parseInt(req.params.gradeId, 10);
   if (!Number.isInteger(gradeId) || gradeId < 1) {
-    // res.status(400).json({
-    //   error: 'grade must be a positive integer'
-    // });
-    // return;
     throw new ClientError(400, 'grade MUST be a positive integer');
   }
   const { name, course } = req.body;
   const score = parseInt(req.body.score, 10);
   if (!name || !course || !score) {
-    // res.status(400).json({
-    //   error: 'name, course, and score are required fields'
-    // });
-    // return;
     throw new ClientError(400, 'name, course, and score ARE required fields');
   }
   const sql = `
@@ -137,30 +96,17 @@ app.put('/api/grades/:gradeId', (req, res, next) => {
     .then(result => {
       const [updatedGrade] = result.rows;
       if (!updatedGrade) {
-        // res.status(404).json({
-        //   error: `cannot find grade with gradeId ${gradeId}`
-        // });
         throw new ClientError(404, `cannot FIND grade with gradeId ${gradeId}`);
       } else {
         res.json(updatedGrade);
       }
     })
-    // .catch(err => {
-    //   console.error(err);
-    //   res.status(500).json({
-    //     error: 'an unexpected error occurred'
-    //   });
-    // });
     .catch(err => next(err));
 });
 
 app.delete('/api/grades/:gradeId', (req, res, next) => {
   const gradeId = parseInt(req.params.gradeId, 10);
   if (!Number.isInteger(gradeId) || gradeId < 1) {
-    // res.status(400).json({
-    //   error: 'grade must be a positive integer'
-    // });
-    // return;
     throw new ClientError(400, 'grade MUST be a positive integer');
   }
   const sql = `
@@ -173,20 +119,11 @@ app.delete('/api/grades/:gradeId', (req, res, next) => {
     .then(result => {
       const [deletedGrade] = result.rows;
       if (!deletedGrade) {
-        // res.status(404).json({
-        //   error: `cannot find grade with gradeId ${gradeId}`
-        // });
         throw new ClientError(404, `cannot FIND grade with gradeId ${gradeId}`);
       } else {
         res.sendStatus(204);
       }
     })
-    // .catch(err => {
-    //   console.error(err);
-    //   res.status(500).json({
-    //     error: 'an unexpected error occurred'
-    //   });
-    // });
     .catch(err => next(err));
 });
 
