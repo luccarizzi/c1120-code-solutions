@@ -21,6 +21,6 @@ const languages = [
 ];
 
 ReactDOM.render(
-  <Accordion />,
+  <Accordion languages={languages}/>,
   document.getElementById('root')
 )

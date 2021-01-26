@@ -23,6 +23,7 @@ export default class Accordion extends React.Component {
   }
 
   render() {
+    const languages = this.props.languages;
     const listLanguages = languages.map(language => {
       let p;
       if (this.state.id === language.id) {
