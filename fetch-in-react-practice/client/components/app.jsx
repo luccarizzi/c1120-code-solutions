@@ -40,7 +40,8 @@ export default class App extends React.Component {
     * TIP: Be sure to SERIALIZE the todo object in the body with JSON.stringify()
     * and specify the "Content-Type" header as "application/json"
     */
-    const newTodos = this.state.todos;
+
+    const newTodos = [...this.state.todos];
 
     fetch('http://localhost:3000/api/todos', {
       method: 'POST',
@@ -74,7 +75,9 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
-    const newTodos = this.state.todos;
+    // const newTodos = this.state.todos;
+    const newTodos = [...this.state.todos];
+
     const todoIndex = newTodos.findIndex(todo => todo.todoId === todoId);
 
     const completedTodo = {
