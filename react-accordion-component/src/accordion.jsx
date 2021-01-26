@@ -15,7 +15,6 @@ export default class Accordion extends React.Component {
     });
     const id = this.state.id;
     if (id === event.target.id) {
-      event.target.nextSibling.className = 'd-none';
       this.setState({
         id: ''
       });

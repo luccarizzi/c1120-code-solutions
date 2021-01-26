@@ -1,10 +1,5 @@
 * {
   font-family: sans-serif;
-
-}
-
-.d-none {
-  display: none;
 }
 
 li {
@@ -15,7 +10,7 @@ li {
   font-size: 22px;
   margin: 0.2rem 0;
   border-radius: 5px;
-  color: #ffffff;
+  color: #fff;
 }
 
 .header {
