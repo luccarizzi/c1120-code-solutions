@@ -1,18 +1,10 @@
 import React from 'react';
 
-const images = [
-  { id: '001', url: '../images/001.png' },
-  { id: '002', url: '../images/004.png' },
-  { id: '003', url: '../images/007.png' },
-  { id: '004', url: '../images/025.png' },
-  { id: '005', url: '../images/039.png' },
-]
-
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: 0
+      imageIndex: 0
     }
     this.timer = this.timer.bind(this);
   }
@@ -20,28 +12,41 @@ export default class Carousel extends React.Component {
   componentDidMount() {
     this.timerID = setInterval(
       this.timer,
-      500
+      1500
     )
   }
 
   timer() {
-    if (this.state.image === 4) {
+    if (this.state.imageIndex === 4) {
       this.setState({
-        image: 0
+        imageIndex: 0
       })
     } else {
       this.setState({
-        image: this.state.image + 1
+        imageIndex: this.state.imageIndex + 1
       })
     }
   }
 
   render() {
 
-    console.log(this.state.image)
+    const { carousel } = this.props;
+    const { imageIndex } = this.state;
 
     return (
-      <h1>haya</h1>
+      <div className='container'>
+        <div className='row d-flex'>
+          <div className='col-3'>
+            <i class="fas fa-chevron-left"></i>
+          </div>
+          <div className='col-6 d-flex justify-content-center'>
+            <img src={carousel[imageIndex].url} />
+          </div>
+          <div>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
     )
 
   }
