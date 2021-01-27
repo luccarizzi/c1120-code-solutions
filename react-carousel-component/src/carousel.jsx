@@ -1,5 +1,14 @@
 import React from 'react';
 
+function Test (props) {
+
+  console.log(props)
+
+  return (
+    <h1>{props.person.name}</h1>
+  )
+}
+
 export default class Carousel extends React.Component {
   constructor(props) {
     super(props);
@@ -34,20 +43,36 @@ export default class Carousel extends React.Component {
     const { imageIndex } = this.state;
 
     return (
-      <div className='container'>
-        <div className='row d-flex'>
-          <div className='col-3'>
-            <i class="fas fa-chevron-left"></i>
-          </div>
-          <div className='col-6 d-flex justify-content-center'>
-            <img src={carousel[imageIndex].url} />
-          </div>
-          <div>
-            <i class="fas fa-chevron-right"></i>
-          </div>
-        </div>
-      </div>
+      <Test />
     )
+
+    // return (
+    //   <div className='container mt-4 border border-4 border-dark rounded'>
+    //     <div className='row d-flex'>
+    //       <div className='col-3 d-flex justify-content-center align-self-center'>
+    //         <i className='fas fa-chevron-left arrow-size'></i>
+    //       </div>
+    //       <div className='col-6 d-flex justify-content-center'>
+    //         <img src={carousel[imageIndex].url} />
+    //       </div>
+    //       <div className='col-3 d-flex justify-content-center align-self-center'>
+    //         <i className='fas fa-chevron-right arrow-size'></i>
+    //       </div>
+    //     </div>
+
+    //     <div className='row justify-content-center mb-4'>
+    //       <div className='col-4 text-center'>
+    //         <i className="far fa-circle px-1 circle-size"></i>
+    //         <i className="far fa-circle px-1 circle-size"></i>
+    //         <i className="far fa-circle px-1 circle-size"></i>
+    //         <i className="far fa-circle px-1 circle-size"></i>
+    //         <i className="far fa-circle px-1 circle-size"></i>
+    //       </div>
+    //     </div>
+    //   </div>
+    // )
 
   }
 }
+
+// <i class="fas fa-circle"></i>
