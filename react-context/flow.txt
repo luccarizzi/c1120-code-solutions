@@ -1,0 +1,25 @@
+1# User can sign up.
+
+The app.jsx will render the page using the renderPage() method, that checks if path exists. If so, the Auth component is returned and rendered. 
+The auth.jsx will render the page using the AuthForm component. 
+The handleChange() method from auth-form.jsx will set its state with the username and password values.
+Once the form gets submitted, the handleSubmit() method will send an API fetch request with the POST method, and then the serialized values are stored into state.
+In index.js, the app.post end-point for the 'sign-up' (which was stored in the action variable) will check if username and password exist. If so, the password gets hashed and inserted into the database along with the username.
+
+2# User can sign in.
+
+The app.jsx will render the page using the renderPage() method, that checks if path exists. If so, the Auth component is returned and rendered. 
+The auth.jsx will render the page using the AuthForm component. 
+The handleChange() method from auth-form.jsx will set its state with the username and password values.
+Once the form gets submitted, the handleSubmit() method will send an API fetch request with the POST method, and then the serialized values are stored into state.
+In index.js, the app.post end-point for the 'sign-in' (which was stored in the action variable) will check if username and password exist. If so, the database will be queried for the username and argon2 will verify if the password and the hashedPassword match. If there is a match, a token will be created and returned along with the user's payload.
+The returned result from the fetch function will then store the token and the user to props.onSignIn.
+In auth.jsx, the render() method will take the props.onSignIn and call the handleSignIn() method (which was accessed through AppContext), setting the token as an item in the local Storage .
+
+3# User can stay signed in (even if they refresh the page).
+
+The componentDidMount() method from app.jsx checks if token exists within the localStorage. If so, the user value is stored into state. As long as the state.user property is true, the user (person) remains logged in.
+
+4# User can sign out.
+
+The 'Sign Out' button calls the handleSignOut() method (that was accessed through AppContext) which will remove the token from the localStorage. 
