@@ -11,12 +11,13 @@ export default class Carousel extends React.Component {
     this.rightArrow = this.rightArrow.bind(this);
     this.componentDidMount = this.componentDidMount.bind(this);
     this.renderDots = this.renderDots.bind(this);
+    this.clickDot = this.clickDot.bind(this);
   }
 
   componentDidMount() {
     this.timerID = setInterval(
       this.timer,
-      2000
+      3000
     )
   }
 
@@ -36,9 +37,10 @@ export default class Carousel extends React.Component {
   leftArrow(event) {
     const { imageIndex } = this.state;
     if (imageIndex === 0) {
-      return this.setState({
+      this.setState({
         imageIndex: 4
       })
+      return
     }
     this.setState({
       imageIndex: imageIndex - 1
@@ -50,9 +52,10 @@ export default class Carousel extends React.Component {
   rightArrow(event) {
     const { imageIndex } = this.state;
     if (imageIndex === 4) {
-      return this.setState({
+      this.setState({
         imageIndex: 0
       })
+      return
     }
     this.setState({
       imageIndex: imageIndex + 1
@@ -61,20 +64,40 @@ export default class Carousel extends React.Component {
     this.componentDidMount()
   }
 
+  clickDot(event) {
+    const id = parseInt(event.target.id, 10);
+    this.setState({
+      imageIndex: id
+    })
+    clearInterval(this.timerID)
+    this.componentDidMount()
+  }
+
   renderDots(props) {
-
     const { imageIndex } = this.state;
+    const { carousel } = this.props;
 
-    console.log(this.props)
+    const list = carousel.map((image, index) => {
+      const id = parseInt(carousel[index].id, 10);
+      let dot;
+      if (index === imageIndex) {
+        dot =
+          <a key={id} onClick={this.clickDot}>
+            <i id={id} className="fas fa-circle px-1 circle-size"></i>
+          </a>
+        return dot;
+      }
+      dot =
+        <a key={id} onClick={this.clickDot}>
+          <i id={id} className="far fa-circle px-1 circle-size"></i>
+        </a>
 
+      return <> {dot} </>;
+    })
     return (
-      <div className='row justify-content-center mb-4'>
+      <div className = 'row justify-content-center mb-4' >
         <div className='col-4 text-center'>
-          <i className="far fa-circle px-1 circle-size"></i>
-          <i className="far fa-circle px-1 circle-size"></i>
-          <i className="far fa-circle px-1 circle-size"></i>
-          <i className="far fa-circle px-1 circle-size"></i>
-          <i className="far fa-circle px-1 circle-size"></i>
+          {list}
         </div>
       </div>
     )
@@ -96,26 +119,12 @@ export default class Carousel extends React.Component {
             <a onClick={this.rightArrow}><i className='fas fa-chevron-right arrow-size'></i></a>
           </div>
         </div>
-
         <>{this.renderDots()} </>
-
-        {/* <div className='row justify-content-center mb-4'>
-          <div className='col-4 text-center'>
-            <i className="far fa-circle px-1 circle-size"></i>
-            <i className="far fa-circle px-1 circle-size"></i>
-            <i className="far fa-circle px-1 circle-size"></i>
-            <i className="far fa-circle px-1 circle-size"></i>
-            <i className="far fa-circle px-1 circle-size"></i>
-          </div>
-        </div> */}
-
       </div>
     )
   }
 
   render() {
-    const { imageIndex } = this.state;
-    console.log(imageIndex)
     return (
       <>
         {this.renderPage()}
@@ -123,5 +132,3 @@ export default class Carousel extends React.Component {
     )
   }
 }
-
-// <i class="fas fa-circle"></i>
